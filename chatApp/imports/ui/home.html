@@ -4,5 +4,15 @@
 </body>
 
 <template name="home">
-    <p>There is some content here.</p>
+<h1> Current message</h1>
+    <ul id="message-container">
+        {{#each message}}
+            <li>{{this.user.username}} - {{this.text}}</li>
+            {{/each}}
+    </ul>
+    <h2>Create A Message</h2>
+    <form id="new-msg">
+        <input name="message" type="text">
+        <button>Submit</button>
+    </form>
 </template>
